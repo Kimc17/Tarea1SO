@@ -1,0 +1,63 @@
+Para ejecutar server:
+gcc server2.c -o app `Magick-config --cflags --cppflags` `Magick-config --ldflags --libs` -levent_core
+./app
+(En máquina)
+gcc server.c -o app `Magick-config --cflags --cppflags` `Magick-config --ldflags --libs` 
+./app
+
+Obtener IP:
+docker ps  (Obtener ID)
+docker inspect ID | grep "IPAddress"
+
+Para ejecutar cliente:
+gcc client2.c -o client2
+./app
+
+Para correr contenedor:
+docker build -t dockerop:'version' .
+(docker image ls|head)
+(docker run -d dockerop:1.1 )
+(docker ps)
+
+docker run -ti dockerop:1.1 bash
+
+apt instal wget
+apt install build-essential
+
+sudo apt install graphicsmagick-libmagick-dev-compat
+
+
+char num[10]="";
+sprintf(num,"%d.png", env);
+printf("El nombre será %s \n", num);
+
+
+  FILE *archivo;	
+ 	char caracteres[100];
+ 	archivo = fopsen("configuracion.config","r"); 
+  char *ret;
+   if((new_socket = accept(socket_desc, (struct sockaddr *)&client,(socklen_t*)&c))){
+         puts("Conexión aceptada");
+        }
+ 	while (feof(archivo) == 0) {   
+ 		fgets(caracteres,100,archivo);
+    printf(caracteres);
+    ret = strstr(caracteres, ipStr);
+      if(ret != NULL){
+       
+      }
+      else{
+         puts("La conexión no fue autorizada");
+      }
+   } 
+    fclose(archivo);
+
+
+
+             struct in_addr clientIp = client.sin_addr;
+         char ipStr[INET_ADDRSTRLEN];
+         inet_ntop(AF_INET, &clientIp, ipStr, INET_ADDRSTRLEN);
+         printf("La IP del cliente es %s: \n",ipStr);
+
+
+         docker run -ti -v "/home/kimberly/Documentos/Volumen:/usr/app/volumen" dockerop:3.0 bash
